@@ -1,0 +1,9 @@
+name: "JananiRajagopalan"
+navbar:
+  title: "JananiRajagopalan"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Projects"
+      href: Journal.html
+output_dir: "docs"

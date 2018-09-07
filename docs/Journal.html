@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Projects</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">JananiRajagopalan</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Journal.html">Projects</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Projects</h1>
+
+</div>
+
+
+<div id="transfer-along-a-continuum" class="section level1">
+<h1>Transfer Along a Continuum</h1>
+<p>The ability to discriminate between stimuli is a pivotal faculty for survival, (e.g., discriminating preys from predators, foes from friends). In experimental settings, successful discrimination is defined by the differential response evoked by two stimuli that lead to different consequences. Often, discrimination involves learning to respond to stimuli that are rather similar to one another. Under these circumstances, Pavlov showed that training history (i.e., which stimuli are presented at the beginning of the training process) weighed more in the success of discrimination than total practice (Pavlov, 1927). He reported that progressive training on an easy task (i.e., discriminating between more dissimilar stimuli) allowed an organism to perform better on a harder task (i.e., discriminating between more similar stimuli) as compared to training directly on the harder task from the outset. This effect, known as transfer along a continuum (TAC), implies that learning the easy discrimination facilitates the acquisition of the hard discrimination problem along the same stimulus dimension (e.g., frequency or intensity; McLaren &amp; Suret, 2000). The TAC phenomenon has been shown across species (e.g., rats, pigeons, rabbits, fish, octopuses, honeybees, and humans), and across sensory modalities (e.g., auditory, visual, taste).</p>
+<p>While there is ample behavioral evidence for discrimination learning in humans through the TAC phenomenon, there is little to no evidence for the underlying neural correlates of the facilitated transfer of discrimination. Here, we propose to examine the functional brain networks involved in the transfer of discrimination learning in humans from an easy task (i.e., discriminating between dissimilar stimuli) to a harder task (i.e., discriminating between similar stimuli). The goal of this project is to provide pilot evidence towards a larger project on discrimination learning across multiple dimensions (e.g., color, contrast, frequency, amplitude, angle), and multiple modalities (e.g., visual and auditory). Understanding the neural correlates of discrimination learning in a specific dimension will allow us to further investigate if discriminating stimulus properties in one dimension can speed up discrimination learning in other dimensions (transfer across dimensions) or, similarly, if discrimination learning in one modality can speed up discrimination learning in different modalities (transfer across modalities). In our proposed study, we seek to obtain the patterns of brain activity that facilitate the TAC phenomenon based on training history and stimulus dimensions. Specifically, we will measure neural responses to the discrimination between two stimuli on two dimensions within the same modality (e.g., Gabor angle and Gabor frequency in the visual modality). In a given dimension, we will investigate the discrimination learning between three training groups: easy, medium, and hard discrimination. Participants will be given feedback after each trial during their respective training phase, and their performance on the hard discrimination task will be assessed during the testing phase.</p>
+<p>Our neural analysis will be informed by various theoretical accounts of the TAC phenomenon; notably, Mackintosh’s (1975) attentional account and Gibson’s (1969) perceptual account. According to Mackintosh (1975), attention mediates the selection of relevant stimulus features that predict relevant consequences such as reward or punishment. Training on the easy task results in an attentional increase to the relevant stimulus dimension, which subsequently facilitates the acquisition of the hard task. In contrast, according to Gibson (1969), learning to discriminate between stimuli is in itself rewarding, and thus does not require external reinforcement. We learn by ignoring features that are common between the two stimuli, and focus on the unique contributions of individual stimuli over time. In the case of easy discrimination, there are assumed to be more unique features than common features, and the pre-exposure of stimuli will allow us to learn the dimension to which the unique features of the stimulus belong. This learning can then be transferred to hard discriminations. The pre-exposure of the hard stimulus itself will not be able to provide the necessary insights into the contributing factors of the stimulus dimension because there are assumed to be more common features than unique features (models for this theory proposed by Saksida, 1999).</p>
+<p>Both the attentional and perceptual accounts work on the assumption that stimuli characteristics are an integral aspect of learning (Hull, 1943; Thompson, 1965). Stimuli that are similar in a particular dimension are assumed to consist of a series of overlapping features, and understanding the variability in these features influences learning to discriminate between two stimuli within a dimension (e.g., intensity or frequency). Deficits in learning stimuli discrimination have been identified in many clinical disorders including (but not limited to) schizophrenia (Kern et al., 2002), learning disabilities (Kraus et al., 1996), and post-traumatic stress disorder (Jovanovic, Kazama, Bachevalier, &amp; Davis, 2011). Furthermore, as different adaptations of discrimination learning, such as known as error-less discrimination, is are being adapted used as therapeutic interventions for dementia (Clare, L., et al., 2000; Haslam, 2018)., Iit is necessary to understand how stimulus discrimination can be transferred across dimensions, and perhaps, modalities, and thus opening new doors for applications of TAC in helping a wide range of patients with impairment in discrimination learning.</p>
+</div>
+<div id="contectual-non-threatening-cues-ptsd" class="section level1">
+<h1>Contectual non-threatening cues PTSD</h1>
+<p>Posttraumatic stress disorder (PTSD) is a mental-health condition that develops after exposure to a traumatic event, and has a significant impact on the quality of life of the affected individual (Zatzick et al., 1997). Current classification schemas, including DSM-V (American Psychiatric Association, 2013) and ICD-10 (World Health Organization, 2010), define PTSD based on symptoms of persistent re-experiencing of traumatic memories, avoidance of triggers that predict the traumatic event, negative mood, and increased arousal. Previous research has shown that patients with PTSD show elevated fear response to cues with negative valence (such as pictures showing violence and aggressive faces; BuckLey, Blanchard, &amp; Neill 2000). Specifically, functional Magnetic Resonance Imaging (fMRI) studies have reported increased activity of the amygdala (Shin, Rauch, &amp; Pitman, 2006) and the prefrontal cortex (Bryant et al., 2008) during the presentation of cues with negative valence in PTSD subjects.</p>
+<p>A common theme in previous PTSD research is to use threatening stimuli (e.g., knife) as cues, which may or may not be related to the trauma itself. Patients with PTSD show increased responses to these threatening stimuli even if they are presented in a safe context (e.g., a knife in the kitchen or a toy bomb; Steiger, Nees, Wicking, Lang, &amp; Flor, 2015; Armony and Dolan 2001; Barrett and Armony 2009; Marschner, Kalisch, Vervliet, Vansteenwegen, &amp; Büchel, 2008; Andreatta, Leombruni, Glotzbach-Schoon, Pauli, &amp; Mühlberger, 2015; Alvarez et al., 2011; Indovina, Robbins, Núñez-Elizalde, Dunn, &amp; Bishop, 2011; Baeuchl, Meyer, Hoppstädter, Diener, &amp; Flor, 2015). However, differences in neural and physiological responses to threatening stimuli that were present during the trauma (i.e., contextual threatening stimuli) and that were not present during the trauma (i.e., non-contextual threatening stimuli) are still largely unexplored.</p>
+<p>To systematically evaluate the neural and physiological responses of perceived threat associated with both contextual and non-contextual threatening stimuli, we must first be able to construct a representational space in which all these stimuli exist. A representational space is usually depicted in the form of a two-dimensional map that displays stimuli based on their similarities to one another. These spaces can be derived from both behavioral (e.g., Shepard &amp; Chipman, 1970) and neuroimaging data (Kriegeskorte, Mur, &amp; Bandettini, 2008). Studies have used representational spaces to understand the neural responses for a variety of continua such as the animacy continuum (Sha et al., 2015), where stimuli (e.g., pictures) are categorized into inanimate objects (house, hammer, stone) or to animate objects (human, dogs, cats). Likewise, we propose that constructing a representational space based on neural responses to contextual and non-contextual threatening objects in PTSD patients will elucidate the differential patterns associated with threat perception in both PTSD patients and healthy controls. In addition, we will include data from physiological responses to increase the accuracy of these spaces. We predict that the representation space for non-contextual threatening stimuli will be more similar to that of contextual threatening stimuli, compared corresponding non-threatening stimuli that weren’t part of the traumatic event. For example, in healthy controls, a military cap would be more similar to a baseball cap than to a gun, whereas in a PTSD patient, a military cap would be more similar to a gun than to a baseball cap.</p>
+</div>
+<div id="object-recognition-via-assessment-of-fragment-similarity" class="section level1">
+<h1>Object Recognition via Assessment of Fragment Similarity</h1>
+<p>The human visual system is continuously burdened with the fundamental cognitive task of object recognition, which serves as a basis for perception (Lowe, 1999). Classically, object recognition is defined as the ability to perceive an object’s physical attributes (e.g., shape, colour and texture), and apply semantic attributes to recognize the object (e.g., as an apple). Physical attributes may include properties such as contour (Attneave, 1954; De Winter &amp; Wagemans, 2008b; Norman, Phillips, &amp; Ross, 2001), curvatures in shape (De Winter &amp; Wagemans, 2004); color (Bramão et al., 2011a). Semantic attributes may include the objects’ use, prior experience with the object, and how the object relates to other objects (Enns, 2004, Biederman 1987).<br />
+One of the early theories to understand object recognition is the concept of isomorphism (similarity): an object (e.g., a tomato) will have a corresponding internal representation of itself (first order isomorphism; Edelman, 1998). Wittgenstein (1953) instead suggested that to identify an object (e,g., a tomato) we use the internal relation between the object and other objects (eg., other red and round fruits) rather than the properties of individual objects alone (tomato is not uniquely encoded), an idea furthered by Garner (1966). These initial differences in schools of thought was through judgements on semantic influences of object recognition. Specifically, when perceiving a stimuli (object) we identify (name) the object based on existing cues that have similarity to the internal representation rather than unique object-based perception (eg., tomato isn’t perceived with only its internal representation as whole but through attributes of redness and roundness that is shared by other objects). Taken together, Shepard and Chipman (1970) proposed the concept of second order isomorphism as a mechanism for object recognition. In their words “second-order relation between (a) the relations among alternative external objects, and (b) the relations among their corresponding internal representations. Thus, although the internal representation for a square need not itself be square, it should (whatever it is) at least have a closer functional relation to the internal representation for a rectangle “(Shepard and Chipman, 1970, p. 2). Based on this theory object recognition appears to be guided by representation of similarity (second order isomorphism) rather than representation by similarity (first order isomorphism; Edelman, 1998). Early behavioral studies on associating semantic attributes to visually presented objects (Shepard &amp; Chipman, 1970; Gordon and Hayward, 1973; Moyer, Bradley, Sorensen, Whiting, and Mansfield, 1978) have shown that second order isomorphism can explain how objects are named and categorized. Object categorization is thought as a succeeding step to object recognition (Enns, 2004, Biederman 1987), as to completely recognize an object (e.g., an apple), one must consider it not only equivalent to other objects (by similarity assessment orange, banana, etc.) in the same category (fruits) but also different from objects not in that category (Rosch, 1978).<br />
+The visual system’s robust ability for object recognition have been further explored in studies that have looked at object recognition using fragments/parts of the objects, such as patterns of particular points (Panis, Winter, De Vandekerckhove, Wagemans, 2008), connecting particular points with straight lines (Attneave, 1954; De Winter &amp; Wagemans, 2008a), or constructing fragments around selected points (i.e., contour deletion studies; refer to the research performed by Biederman &amp; Blickle, 1985, referenced in Biederman, 1987; Kennedy &amp; Domander, 1985; Panis et al., 2008). These studies suggest that the visual system can solve object recognition problems even when presented with partial information of the objects. Additionally, the visual system performs object recognition rapidly; behavioral reaction times for single image presentations are as short as ~250 ms in monkeys (Fabre-Thorpe et al., 1998) and ~350 ms in humans (Rousselet et al., 2002; Thorpe et al., 1996), and images can be presented sequentially at rates less than ~100 ms per image (Keysers et al., 2001; Potter, 1976). Surface recordings of evoked-potentials in humans find neural evidence for object identification within 150 ms (Thorpe et al., 1996). These evidences suggest that fragmented parts of the objects may be sufficient for rapid assessment of objects by the visual system. A recent study by Panis and Wagemans (2009), using fragmented objects as stimuli indicated that curved segments in the fragments are more important to object recognition that straight segments. Furthermore, object recognition was found to be faster when presented in fragmented parts because under such conditions recognition tends to depend on global shape information (Wagemans et al., 2008). With the help of recent techniques such as functional magnetic resonance imaging (fMRI), studies have shown that the lateral occipital complex (LOC), a cortical region is critical for object recognition in humans. The LOC is thought to primarily code the shape, rather than the surface properties of an object, and was also found active during fragmented object recognition (Hayworth and Biederman, 2006) indicating that neural correlates of complete-object recognition may overlap with that of fragmented object recognition. In addition, LOC was also found to be involved in the assessing similarity and categorizing natural scenes (Edelman et al, 1998). Recent studies have further elaborated that object similarity can be computed from neural measurements and has been used to study visual categorization and semantic influences in inferior temporal (IT) cortex in both humans and monkeys (Kriesgeskorte et al, 2008; Sha et al, 2015). These evidences suggest that object recognition can be studied by looking at similarity assessment of fragments as opposed to the whole object.<br />
+In this research, we explore the idea that the visual system approaches object recognition as a puzzle that can be solved using the fragmented parts of the objects. Upon detection of the fragmented object, the visual system assesses the similarity between the externally presented fragments to the similarity of the internal representations of those fragments until complete object recognition occurs. Specifically, when presented with fragments of an object in gradations (Figure 1), we hypothesize that the visual system evaluates some similarity measure at every gradation level, and eventually recognizes and categorizes the presented fragments, and we propose that there exists a second order isomorphism by which the visual system effectively interprets the presented object fragments.</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
